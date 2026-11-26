@@ -119,6 +119,37 @@ package id, so both can coexist).
 - `lintVitalRelease` runs as part of `assembleRelease` and fails on errors.
 - `./gradlew build` runs the unit tests plus lint for both build types.
 
+### Releasing
+
+`.github/workflows/release.yml` builds the APK on GitHub-hosted runners, so no
+local Android SDK is needed to ship a version:
+
+```bash
+# 1. bump versionCode / versionName in app/build.gradle.kts
+# 2. tag and push
+git commit -am "Bump to 1.0.1"
+git tag -a v1.0.1 -m "SmartTube Updater 1.0.1"
+git push origin main v1.0.1
+```
+
+The workflow runs the unit tests, builds the signed release, and attaches
+`SmartTubeUpdater-1.0.1-release.apk` to the GitHub Release for that tag (a tag
+containing `-`, e.g. `v1.1.0-beta1`, is published as a prerelease). A manual
+*Release APK → Run workflow* only uploads the artifact, which is the quickest way
+to verify the toolchain.
+
+Signing on CI needs four repository secrets (`gh secret set NAME`):
+
+| Secret | Value |
+|---|---|
+| `KEYSTORE_BASE64` | `base64 -i keystore/smarttube-monitor.jks` |
+| `KEYSTORE_PASSWORD` | `storePassword` from `keystore.properties` |
+| `KEY_ALIAS` | `keyAlias` (currently `smarttube-monitor`) |
+| `KEY_PASSWORD` | `keyPassword` from `keystore.properties` |
+
+If `KEYSTORE_BASE64` is missing the build still succeeds and emits an unsigned
+APK with a workflow warning — never commit the keystore or its passwords.
+
 ## Project layout
 
 ```

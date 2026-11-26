@@ -1,0 +1,94 @@
+name: Release APK
+
+# Builds the signed release APK on CI so publishing never depends on a local
+# Android SDK. Pushing a v* tag creates/updates the matching GitHub Release;
+# a manual run only produces the workflow artifact (useful to verify the
+# toolchain and signing config without touching a release).
+
+on:
+  push:
+    tags: ["v*"]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: release-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  build:
+    name: Build signed release APK
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up JDK 17
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: "17"
+          cache: gradle
+
+      - name: Set up Android SDK
+        uses: android-actions/setup-android@v3
+
+      - name: Install SDK packages
+        run: sdkmanager "platforms;android-35" "build-tools;35.0.0" | tail -1
+
+      # keystore.properties / keystore/*.jks are gitignored, so they are rebuilt
+      # from repository secrets. Without the four secrets the build still runs,
+      # but produces an unsigned APK.
+      - name: Restore signing config
+        env:
+          KEYSTORE_BASE64: ${{ secrets.KEYSTORE_BASE64 }}
+          KEYSTORE_PASSWORD: ${{ secrets.KEYSTORE_PASSWORD }}
+          KEY_ALIAS: ${{ secrets.KEY_ALIAS }}
+          KEY_PASSWORD: ${{ secrets.KEY_PASSWORD }}
+        run: |
+          if [ -z "$KEYSTORE_BASE64" ]; then
+            echo "::warning::KEYSTORE_BASE64 is not set - the APK will not be signed"
+            exit 0
+          fi
+          mkdir -p keystore
+          printf '%s' "$KEYSTORE_BASE64" | base64 --decode > keystore/smarttube-monitor.jks
+          printf 'storeFile=keystore/smarttube-monitor.jks\nstorePassword=%s\nkeyAlias=%s\nkeyPassword=%s\n' \
+            "$KEYSTORE_PASSWORD" "$KEY_ALIAS" "$KEY_PASSWORD" > keystore.properties
+
+      - name: Run unit tests
+        run: ./gradlew :app:testReleaseUnitTest --no-daemon --stacktrace
+
+      - name: Assemble signed release
+        run: ./gradlew :app:assembleRelease --no-daemon --stacktrace
+
+      - name: Name the APK after the version
+        id: apk
+        run: |
+          if [ "$GITHUB_REF_TYPE" = "tag" ]; then
+            VERSION="${GITHUB_REF_NAME#v}"
+          else
+            VERSION="0.0.0-${GITHUB_SHA::7}"
+          fi
+          OUT="SmartTubeUpdater-${VERSION}-release.apk"
+          cp app/build/outputs/apk/release/app-release.apk "$OUT"
+          echo "path=$OUT" >> "$GITHUB_OUTPUT"
+          echo "Created $OUT ($(du -h "$OUT" | cut -f1))"
+
+      - name: Upload APK artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: SmartTubeUpdater-release-apk
+          path: ${{ steps.apk.outputs.path }}
+          if-no-files-found: error
+          retention-days: 90
+
+      - name: Attach APK to the GitHub Release
+        if: github.ref_type == 'tag'
+        uses: softprops/action-gh-release@v2
+        with:
+          files: ${{ steps.apk.outputs.path }}
+          fail_on_unmatched_files: true
+          draft: false
+          prerelease: ${{ contains(github.ref_name, '-') }}
