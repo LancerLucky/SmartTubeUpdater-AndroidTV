@@ -82,7 +82,7 @@ jobs:
           echo "Created $OUT ($(du -h "$OUT" | cut -f1))"
 
       - name: Upload APK artifact
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v5
         with:
           name: SmartTubeUpdater-release-apk
           path: ${{ steps.apk.outputs.path }}
