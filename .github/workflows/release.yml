@@ -23,20 +23,25 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
       - name: Set up JDK 17
-        uses: actions/setup-java@v4
+        uses: actions/setup-java@v5
         with:
           distribution: temurin
           java-version: "17"
           cache: gradle
 
-      - name: Set up Android SDK
-        uses: android-actions/setup-android@v3
-
-      - name: Install SDK packages
-        run: sdkmanager "platforms;android-35" "build-tools;35.0.0" | tail -1
+      # The runner image already ships an Android SDK; only the packages this
+      # project compiles against are missing. (android-actions/setup-android is
+      # avoided: it still tries to install the removed "tools" package.)
+      - name: Install Android SDK packages
+        run: |
+          SDK="${ANDROID_HOME:-${ANDROID_SDK_ROOT:-/usr/local/lib/android/sdk}}"
+          echo "ANDROID_HOME=$SDK" >> "$GITHUB_ENV"
+          SMD="$(command -v sdkmanager || echo "$SDK/cmdline-tools/latest/bin/sdkmanager")"
+          yes | "$SMD" --licenses > /dev/null || true
+          "$SMD" "platforms;android-35" "build-tools;35.0.0" | tail -1
 
       # keystore.properties / keystore/*.jks are gitignored, so they are rebuilt
       # from repository secrets. Without the four secrets the build still runs,
