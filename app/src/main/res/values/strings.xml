@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Brand name, deliberately not localised. -->
+    <string name="app_name" translatable="false">SmartTube Updater</string>
+    <string name="subtitle">Latest stable release · yuliskov/SmartTube</string>
+
+    <string name="status_checking">Checking GitHub for the latest stable release…</string>
+    <string name="status_ready">Latest stable release loaded.</string>
+    <string name="status_error">Could not check releases: %1$s</string>
+    <string name="status_downloading">Downloading %1$s…</string>
+    <string name="status_waiting_network">Waiting for the system download service to start…</string>
+    <string name="status_download_progress">Downloading %1$s of %2$s (%3$d%%)</string>
+    <string name="status_download_progress_speed">Downloading %1$s of %2$s (%3$d%%) · %4$s</string>
+    <string name="status_download_paused">Download paused — check the device network.</string>
+    <string name="status_user_paused">Download paused — press Resume to continue</string>
+    <string name="status_paused_bytes">Paused at %1$s — press Resume to continue</string>
+    <string name="status_downloading_speed">Downloading %1$s · %2$s</string>
+    <string name="status_downloading_size">Downloading %1$s…</string>
+    <string name="status_paused_progress">Paused at %1$s of %2$s — press Resume to continue</string>
+
+    <string name="version_value">v%1$s</string>
+    <string name="published_value">Published %1$s</string>
+    <string name="published_unknown">Publish date unknown</string>
+    <string name="asset_value">APK: %1$s (%2$s)</string>
+    <string name="asset_missing">No matching APK asset found in this release</string>
+    <string name="size_unknown">size unknown</string>
+
+    <string name="installed_none">SmartTube is not installed on this device</string>
+    <string name="installed_up_to_date">Installed %1$s · up to date</string>
+    <string name="installed_update_available">Installed %1$s · update available</string>
+    <string name="installed_ahead">Installed %1$s · newer than the stable release</string>
+
+    <string name="label_changes">WHAT\'S NEW</string>
+    <string name="notes_empty">No release notes.</string>
+
+    <string name="action_download">Download APK</string>
+    <string name="action_download_version">Download %1$s</string>
+    <string name="action_redownload">Redownload %1$s</string>
+    <string name="action_pause">Pause</string>
+    <string name="action_resume">Resume</string>
+    <string name="action_install">Install</string>
+    <string name="action_install_version">Install %1$s</string>
+    <string name="action_reinstall_version">Reinstall %1$s</string>
+    <string name="action_versions">Versions</string>
+    <string name="action_release_page">Release page</string>
+    <string name="action_refresh">Refresh</string>
+    <string name="action_up_to_date">Up to date</string>
+
+    <string name="dialog_versions_title">Choose a SmartTube release</string>
+    <string name="dialog_apk_title">Choose the APK to download</string>
+    <string name="kind_stable">stable</string>
+    <string name="kind_beta">beta</string>
+    <string name="version_choice">%1$s · %2$s</string>
+    <string name="version_choice_current">%1$s · %2$s · shown</string>
+    <string name="asset_choice">%1$s (%2$s)</string>
+    <string name="asset_choice_recommended">%1$s (%2$s) · recommended for this device</string>
+    <string name="status_loading_versions">Loading the release list…</string>
+    <string name="status_release_selected">Showing %1$s</string>
+
+    <string name="download_started">Started downloading %1$s</string>
+    <string name="download_fallback">The system download service stayed idle — downloading inside the app instead</string>
+    <string name="download_error">Download failed: %1$s</string>
+    <string name="download_complete">Download complete — press Install to update SmartTube</string>
+    <string name="download_failed">Download did not finish. Check Downloads/SmartTube/ and try again.</string>
+
+    <string name="install_permission_needed">Allow SmartTube Updater to install unknown apps, then press Install again</string>
+    <string name="install_unavailable">Could not open the APK. Open it manually from Downloads/SmartTube/</string>
+    <string name="no_browser">No browser available to open the release page</string>
+
+    <string name="hint_background_check">Background check every 12 hours · APKs install straight from this app</string>
+
+    <string name="channel_releases">SmartTube releases</string>
+    <string name="channel_releases_desc">Notifies when a new SmartTube stable release is published</string>
+    <string name="notification_title">SmartTube %1$s is available</string>
+    <string name="notification_text">A new stable SmartTube build was published. Open the app to download it.</string>
+</resources>

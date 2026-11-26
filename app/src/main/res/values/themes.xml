@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <style name="Theme.SmartTubeUpdater" parent="Theme.AppCompat.NoActionBar">
+        <item name="android:windowBackground">@color/background</item>
+        <item name="android:colorBackground">@color/background</item>
+        <item name="android:textColorPrimary">@color/text_primary</item>
+        <item name="android:textColorSecondary">@color/text_secondary</item>
+        <item name="colorAccent">@color/accent</item>
+        <item name="colorPrimary">@color/accent</item>
+        <item name="colorPrimaryDark">@color/background</item>
+        <item name="android:windowContentTransitions">false</item>
+        <!-- TV friendly: no action bar, no default focus halo (API 26+, ignored below). -->
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:defaultFocusHighlightEnabled" tools:targetApi="26">false</item>
+    </style>
+
+    <!-- Dark, D-pad friendly dialogs for the version / APK choosers -->
+    <style name="Theme.SmartTubeUpdater.Dialog" parent="Theme.AppCompat.Dialog.Alert">
+        <item name="android:windowBackground">@color/surface</item>
+        <item name="android:textColorPrimary">@color/text_primary</item>
+        <item name="android:textColorSecondary">@color/text_secondary</item>
+        <item name="colorAccent">@color/accent_bright</item>
+        <item name="android:backgroundDimAmount">0.75</item>
+        <item name="android:listPreferredItemHeight">64dp</item>
+        <item name="android:listPreferredItemPaddingStart">24dp</item>
+        <item name="android:listPreferredItemPaddingEnd">24dp</item>
+        <item name="android:windowMinWidthMajor">55%</item>
+        <item name="android:windowMinWidthMinor">80%</item>
+    </style>
+
+</resources>

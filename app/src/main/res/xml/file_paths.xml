@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<paths>
+    <!-- Android/data/<package>/files/Download/SmartTube/ -->
+    <external-files-path
+        name="smarttube_apks"
+        path="Download/SmartTube/" />
+</paths>

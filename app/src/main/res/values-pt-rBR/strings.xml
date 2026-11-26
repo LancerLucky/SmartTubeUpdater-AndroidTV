@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Portuguese (Brazil). -->
+<resources>
+
+    <string name="subtitle">Versão estável mais recente · yuliskov/SmartTube</string>
+
+    <string name="status_checking">Procurando a versão estável mais recente no GitHub…</string>
+    <string name="status_ready">Versão estável mais recente carregada.</string>
+    <string name="status_error">Não foi possível verificar as versões: %1$s</string>
+    <string name="status_downloading">Baixando %1$s…</string>
+    <string name="status_waiting_network">Aguardando o serviço de download do sistema iniciar…</string>
+    <string name="status_download_progress">Baixando %1$s de %2$s (%3$d%%)</string>
+    <string name="status_download_progress_speed">Baixando %1$s de %2$s (%3$d%%) · %4$s</string>
+    <string name="status_download_paused">Download pausado — verifique a rede do dispositivo.</string>
+    <string name="status_user_paused">Download pausado — pressione Retomar</string>
+    <string name="status_paused_bytes">Pausado em %1$s — pressione Retomar</string>
+    <string name="status_downloading_speed">Baixando %1$s · %2$s</string>
+    <string name="status_downloading_size">Baixando %1$s…</string>
+    <string name="status_paused_progress">Pausado em %1$s de %2$s — pressione Retomar</string>
+
+    <string name="version_value">v%1$s</string>
+    <string name="published_value">Publicado em %1$s</string>
+    <string name="published_unknown">Data de publicação desconhecida</string>
+    <string name="asset_value">APK: %1$s (%2$s)</string>
+    <string name="asset_missing">Nenhum APK compatível encontrado nesta versão</string>
+    <string name="size_unknown">tamanho desconhecido</string>
+
+    <string name="installed_none">O SmartTube não está instalado neste dispositivo</string>
+    <string name="installed_up_to_date">Instalado %1$s · atualizado</string>
+    <string name="installed_update_available">Instalado %1$s · atualização disponível</string>
+    <string name="installed_ahead">Instalado %1$s · mais recente que a versão estável</string>
+
+    <string name="label_changes">NOVIDADES</string>
+    <string name="notes_empty">Sem notas da versão.</string>
+
+    <string name="action_download">Baixar APK</string>
+    <string name="action_download_version">Baixar %1$s</string>
+    <string name="action_redownload">Baixar %1$s novamente</string>
+    <string name="action_pause">Pausar</string>
+    <string name="action_resume">Retomar</string>
+    <string name="action_install">Instalar</string>
+    <string name="action_install_version">Instalar %1$s</string>
+    <string name="action_reinstall_version">Reinstalar %1$s</string>
+    <string name="action_versions">Versões</string>
+    <string name="action_release_page">Página da versão</string>
+    <string name="action_refresh">Atualizar</string>
+    <string name="action_up_to_date">Atualizado</string>
+
+    <string name="dialog_versions_title">Escolha uma versão do SmartTube</string>
+    <string name="dialog_apk_title">Escolha o APK para baixar</string>
+    <string name="kind_stable">estável</string>
+    <string name="kind_beta">beta</string>
+    <string name="version_choice">%1$s · %2$s</string>
+    <string name="version_choice_current">%1$s · %2$s · em exibição</string>
+    <string name="asset_choice">%1$s (%2$s)</string>
+    <string name="asset_choice_recommended">%1$s (%2$s) · recomendado para este dispositivo</string>
+    <string name="status_loading_versions">Carregando a lista de versões…</string>
+    <string name="status_release_selected">Exibindo %1$s</string>
+
+    <string name="download_started">Download de %1$s iniciado</string>
+    <string name="download_fallback">O serviço de download do sistema ficou inativo — baixando dentro do app</string>
+    <string name="download_error">Falha no download: %1$s</string>
+    <string name="download_complete">Download concluído — pressione Instalar para atualizar o SmartTube</string>
+    <string name="download_failed">O download não terminou. Verifique Downloads/SmartTube/ e tente de novo.</string>
+
+    <string name="install_permission_needed">Permita que o SmartTube Updater instale apps desconhecidos e pressione Instalar novamente</string>
+    <string name="install_unavailable">Não foi possível abrir o APK. Abra-o manualmente em Downloads/SmartTube/</string>
+    <string name="no_browser">Nenhum navegador disponível para abrir a página da versão</string>
+
+    <string name="hint_background_check">Verificação a cada 12 horas · os APKs instalam direto deste app</string>
+
+    <string name="channel_releases">Versões do SmartTube</string>
+    <string name="channel_releases_desc">Avisa quando uma nova versão estável do SmartTube é publicada</string>
+    <string name="notification_title">SmartTube %1$s disponível</string>
+    <string name="notification_text">Uma nova versão estável do SmartTube foi publicada. Abra o app para baixá-la.</string>
+</resources>

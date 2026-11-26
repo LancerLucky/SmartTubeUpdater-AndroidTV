@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Traditional Chinese (Hong Kong). -->
+<resources>
+
+    <string name="subtitle">最新穩定版 · yuliskov/SmartTube</string>
+
+    <string name="status_checking">正在從 GitHub 檢查最新穩定版…</string>
+    <string name="status_ready">已取得最新穩定版。</string>
+    <string name="status_error">無法檢查版本：%1$s</string>
+    <string name="status_downloading">正在下載 %1$s…</string>
+    <string name="status_waiting_network">正在等待系統下載服務啟動…</string>
+    <string name="status_download_progress">正在下載 %1$s / %2$s（%3$d%%）</string>
+    <string name="status_download_progress_speed">正在下載 %1$s / %2$s（%3$d%%）· %4$s</string>
+    <string name="status_download_paused">下載已暫停，請檢查裝置網路。</string>
+    <string name="status_user_paused">已暫停下載，按「繼續」恢復</string>
+    <string name="status_paused_bytes">已在 %1$s 處暫停，按「繼續」恢復</string>
+    <string name="status_downloading_speed">正在下載 %1$s · %2$s</string>
+    <string name="status_downloading_size">正在下載 %1$s…</string>
+    <string name="status_paused_progress">已在 %1$s / %2$s 處暫停，按「繼續」恢復</string>
+
+    <string name="version_value">v%1$s</string>
+    <string name="published_value">發佈於 %1$s</string>
+    <string name="published_unknown">發佈日期未知</string>
+    <string name="asset_value">APK：%1$s（%2$s）</string>
+    <string name="asset_missing">此版本沒有符合的 APK</string>
+    <string name="size_unknown">大小未知</string>
+
+    <string name="installed_none">此裝置未安裝 SmartTube</string>
+    <string name="installed_up_to_date">已安裝 %1$s · 已是最新</string>
+    <string name="installed_update_available">已安裝 %1$s · 有可用更新</string>
+    <string name="installed_ahead">已安裝 %1$s · 比穩定版更新</string>
+
+    <string name="label_changes">更新內容</string>
+    <string name="notes_empty">沒有更新說明。</string>
+
+    <string name="action_download">下載 APK</string>
+    <string name="action_download_version">下載 %1$s</string>
+    <string name="action_redownload">重新下載 %1$s</string>
+    <string name="action_pause">暫停</string>
+    <string name="action_resume">繼續</string>
+    <string name="action_install">安裝</string>
+    <string name="action_install_version">安裝 %1$s</string>
+    <string name="action_reinstall_version">重新安裝 %1$s</string>
+    <string name="action_versions">版本</string>
+    <string name="action_release_page">發佈頁面</string>
+    <string name="action_refresh">重新整理</string>
+    <string name="action_up_to_date">已是最新</string>
+
+    <string name="dialog_versions_title">選擇 SmartTube 版本</string>
+    <string name="dialog_apk_title">選擇要下載的 APK</string>
+    <string name="kind_stable">穩定版</string>
+    <string name="kind_beta">測試版</string>
+    <string name="version_choice">%1$s · %2$s</string>
+    <string name="version_choice_current">%1$s · %2$s · 目前顯示</string>
+    <string name="asset_choice">%1$s（%2$s）</string>
+    <string name="asset_choice_recommended">%1$s（%2$s）· 建議用於此裝置</string>
+    <string name="status_loading_versions">正在載入版本清單…</string>
+    <string name="status_release_selected">正在顯示 %1$s</string>
+
+    <string name="download_started">已開始下載 %1$s</string>
+    <string name="download_fallback">系統下載服務未回應，改為在應用程式內下載</string>
+    <string name="download_error">下載失敗：%1$s</string>
+    <string name="download_complete">下載完成，請按「安裝」以更新 SmartTube</string>
+    <string name="download_failed">下載未完成，請檢查 Downloads/SmartTube/ 後重試。</string>
+
+    <string name="install_permission_needed">請允許 SmartTube Updater 安裝未知應用程式，然後再次按「安裝」</string>
+    <string name="install_unavailable">無法開啟 APK，請從 Downloads/SmartTube/ 手動安裝</string>
+    <string name="no_browser">沒有可用於開啟發佈頁面的瀏覽器</string>
+
+    <string name="hint_background_check">每 12 小時背景檢查一次 · APK 可直接在此應用程式內安裝</string>
+
+    <string name="channel_releases">SmartTube 版本</string>
+    <string name="channel_releases_desc">發佈新的 SmartTube 穩定版時通知</string>
+    <string name="notification_title">SmartTube %1$s 已發佈</string>
+    <string name="notification_text">新的 SmartTube 穩定版已發佈，開啟應用程式即可下載。</string>
+</resources>

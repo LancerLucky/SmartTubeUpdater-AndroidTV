@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Japanese. -->
+<resources>
+
+    <string name="subtitle">最新の安定版 · yuliskov/SmartTube</string>
+
+    <string name="status_checking">GitHub で最新の安定版を確認しています…</string>
+    <string name="status_ready">最新の安定版を読み込みました。</string>
+    <string name="status_error">リリースを確認できませんでした: %1$s</string>
+    <string name="status_downloading">%1$s をダウンロード中…</string>
+    <string name="status_waiting_network">システムのダウンロードサービスの起動を待っています…</string>
+    <string name="status_download_progress">%1$s / %2$s をダウンロード中（%3$d%%）</string>
+    <string name="status_download_progress_speed">%1$s / %2$s をダウンロード中（%3$d%%）· %4$s</string>
+    <string name="status_download_paused">ダウンロードを一時停止しました — 端末のネットワークを確認してください。</string>
+    <string name="status_user_paused">ダウンロードを一時停止しました — 「再開」を押してください</string>
+    <string name="status_paused_bytes">%1$s で一時停止 — 「再開」を押してください</string>
+    <string name="status_downloading_speed">%1$s をダウンロード中 · %2$s</string>
+    <string name="status_downloading_size">%1$s をダウンロード中…</string>
+    <string name="status_paused_progress">%1$s / %2$s で一時停止 — 「再開」を押してください</string>
+
+    <string name="version_value">v%1$s</string>
+    <string name="published_value">%1$s に公開</string>
+    <string name="published_unknown">公開日は不明</string>
+    <string name="asset_value">APK: %1$s（%2$s）</string>
+    <string name="asset_missing">このリリースに一致する APK がありません</string>
+    <string name="size_unknown">サイズ不明</string>
+
+    <string name="installed_none">この端末に SmartTube はインストールされていません</string>
+    <string name="installed_up_to_date">%1$s をインストール済み · 最新です</string>
+    <string name="installed_update_available">%1$s をインストール済み · 更新があります</string>
+    <string name="installed_ahead">%1$s をインストール済み · 安定版より新しい</string>
+
+    <string name="label_changes">更新内容</string>
+    <string name="notes_empty">リリースノートはありません。</string>
+
+    <string name="action_download">APK をダウンロード</string>
+    <string name="action_download_version">%1$s をダウンロード</string>
+    <string name="action_redownload">%1$s を再ダウンロード</string>
+    <string name="action_pause">一時停止</string>
+    <string name="action_resume">再開</string>
+    <string name="action_install">インストール</string>
+    <string name="action_install_version">%1$s をインストール</string>
+    <string name="action_reinstall_version">%1$s を再インストール</string>
+    <string name="action_versions">バージョン</string>
+    <string name="action_release_page">リリースページ</string>
+    <string name="action_refresh">更新</string>
+    <string name="action_up_to_date">最新</string>
+
+    <string name="dialog_versions_title">SmartTube のリリースを選択</string>
+    <string name="dialog_apk_title">ダウンロードする APK を選択</string>
+    <string name="kind_stable">安定版</string>
+    <string name="kind_beta">ベータ</string>
+    <string name="version_choice">%1$s · %2$s</string>
+    <string name="version_choice_current">%1$s · %2$s · 表示中</string>
+    <string name="asset_choice">%1$s（%2$s）</string>
+    <string name="asset_choice_recommended">%1$s（%2$s）· この端末に推奨</string>
+    <string name="status_loading_versions">リリース一覧を読み込んでいます…</string>
+    <string name="status_release_selected">%1$s を表示中</string>
+
+    <string name="download_started">%1$s のダウンロードを開始しました</string>
+    <string name="download_fallback">システムのダウンロードサービスが応答しないため、アプリ内でダウンロードします</string>
+    <string name="download_error">ダウンロードに失敗しました: %1$s</string>
+    <string name="download_complete">ダウンロード完了 — 「インストール」を押して SmartTube を更新します</string>
+    <string name="download_failed">ダウンロードが完了しませんでした。Downloads/SmartTube/ を確認して再試行してください。</string>
+
+    <string name="install_permission_needed">SmartTube Updater に不明なアプリのインストールを許可してから、もう一度「インストール」を押してください</string>
+    <string name="install_unavailable">APK を開けませんでした。Downloads/SmartTube/ から手動で開いてください</string>
+    <string name="no_browser">リリースページを開けるブラウザがありません</string>
+
+    <string name="hint_background_check">12 時間ごとにバックグラウンド確認 · APK はこのアプリから直接インストールされます</string>
+
+    <string name="channel_releases">SmartTube のリリース</string>
+    <string name="channel_releases_desc">SmartTube の新しい安定版が公開されたときに通知します</string>
+    <string name="notification_title">SmartTube %1$s が利用可能です</string>
+    <string name="notification_text">SmartTube の新しい安定版が公開されました。アプリを開いてダウンロードしてください。</string>
+</resources>

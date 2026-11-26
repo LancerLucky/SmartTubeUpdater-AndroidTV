@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Single screen, D-pad first Android TV layout.
+  Sized to fit a 1080p TV (≈540dp tall) without scrolling, with the action row
+  placed right under the release card so it stays visible on focus.
+-->
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:clipToPadding="false"
+    android:fillViewport="true"
+    android:paddingStart="48dp"
+    android:paddingTop="26dp"
+    android:paddingEnd="48dp"
+    android:paddingBottom="26dp"
+    android:scrollbarStyle="outsideOverlay">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/app_name"
+            android:textColor="@color/text_primary"
+            android:textSize="28sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:text="@string/subtitle"
+            android:textColor="@color/text_secondary"
+            android:textSize="13sp" />
+
+        <LinearLayout
+            android:id="@+id/card"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="14dp"
+            android:background="@drawable/bg_card"
+            android:orientation="vertical"
+            android:padding="20dp"
+            android:visibility="gone">
+
+            <TextView
+                android:id="@+id/textVersion"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/text_primary"
+                android:textSize="34sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/textTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/accent_bright"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/textInstalled"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:textColor="@color/text_secondary"
+                android:textSize="13sp" />
+
+            <TextView
+                android:id="@+id/textPublished"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:textColor="@color/text_secondary"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/textAsset"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:textColor="@color/text_secondary"
+                android:textSize="12sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="14dp"
+            android:orientation="horizontal"
+            tools:ignore="ButtonStyle">
+
+            <!-- Inert status pill: shown (disabled, not focusable) when the
+                 release on screen is already installed. -->
+            <Button
+                android:id="@+id/buttonUpToDate"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:layout_marginEnd="8dp"
+                android:background="@drawable/bg_button_secondary"
+                android:enabled="false"
+                android:focusable="false"
+                android:fontFamily="sans-serif-medium"
+                android:minWidth="110dp"
+                android:paddingStart="18dp"
+                android:paddingEnd="18dp"
+                android:text="@string/action_up_to_date"
+                android:textAllCaps="false"
+                android:textColor="@color/success"
+                android:textSize="15sp"
+                android:visibility="gone"
+                app:backgroundTint="@null" />
+
+            <Button
+                android:id="@+id/buttonDownload"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:background="@drawable/bg_button_primary"
+                android:enabled="false"
+                android:fontFamily="sans-serif-medium"
+                android:minWidth="140dp"
+                android:paddingStart="20dp"
+                android:paddingEnd="20dp"
+                android:text="@string/action_download"
+                android:textAllCaps="false"
+                android:textColor="@color/on_accent"
+                android:textSize="15sp"
+                app:backgroundTint="@null" />
+
+            <Button
+                android:id="@+id/buttonInstall"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:layout_marginStart="8dp"
+                android:background="@drawable/bg_button_primary"
+                android:fontFamily="sans-serif-medium"
+                android:minWidth="100dp"
+                android:paddingStart="18dp"
+                android:paddingEnd="18dp"
+                android:text="@string/action_install"
+                android:textAllCaps="false"
+                android:textColor="@color/on_accent"
+                android:textSize="15sp"
+                android:visibility="gone"
+                app:backgroundTint="@null" />
+
+            <Button
+                android:id="@+id/buttonVersions"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:layout_marginStart="8dp"
+                android:background="@drawable/bg_button_secondary"
+                android:fontFamily="sans-serif-medium"
+                android:minWidth="110dp"
+                android:paddingStart="18dp"
+                android:paddingEnd="18dp"
+                android:text="@string/action_versions"
+                android:textAllCaps="false"
+                android:textColor="@color/text_primary"
+                android:textSize="15sp"
+                app:backgroundTint="@null" />
+
+            <Button
+                android:id="@+id/buttonReleasePage"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:layout_marginStart="8dp"
+                android:background="@drawable/bg_button_secondary"
+                android:enabled="false"
+                android:fontFamily="sans-serif-medium"
+                android:minWidth="130dp"
+                android:paddingStart="18dp"
+                android:paddingEnd="18dp"
+                android:text="@string/action_release_page"
+                android:textAllCaps="false"
+                android:textColor="@color/text_primary"
+                android:textSize="15sp"
+                app:backgroundTint="@null" />
+
+            <Button
+                android:id="@+id/buttonRefresh"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:layout_marginStart="8dp"
+                android:background="@drawable/bg_button_secondary"
+                android:fontFamily="sans-serif-medium"
+                android:minWidth="100dp"
+                android:paddingStart="18dp"
+                android:paddingEnd="18dp"
+                android:text="@string/action_refresh"
+                android:textAllCaps="false"
+                android:textColor="@color/text_primary"
+                android:textSize="15sp"
+                app:backgroundTint="@null" />
+        </LinearLayout>
+
+        <ProgressBar
+            android:id="@+id/progress"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:indeterminate="true"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/textStatus"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:textColor="@color/text_secondary"
+            android:textSize="13sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:letterSpacing="0.08"
+            android:text="@string/label_changes"
+            android:textColor="@color/text_secondary"
+            android:textSize="11sp"
+            android:textStyle="bold" />
+
+        <!-- Not scrollable on purpose: keeps D-pad focus on the action row. -->
+        <TextView
+            android:id="@+id/textNotes"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:ellipsize="end"
+            android:lineSpacingExtra="2dp"
+            android:maxLines="4"
+            android:textColor="@color/text_primary"
+            android:textSize="13sp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="14dp"
+            android:text="@string/hint_background_check"
+            android:textColor="@color/text_secondary"
+            android:textSize="11sp" />
+    </LinearLayout>
+</ScrollView>
